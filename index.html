@@ -7,7 +7,20 @@
     <link rel="shortcut icon" href="./Images/s.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  </head>
+  <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script src="mail.js"></script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "PBbTtNDfz_MMAj0SL",
+      });
+   })();
+</script>
+
+
+</head>
 <body>
     <div id="wrapper">
         <div class="container">
@@ -253,35 +266,36 @@
                 <h1 class="contuctus-heading">Contact me</h1>
                 <h2 class="contuctus-sub">Qestions thoughts or just went  to say hello?</h2>
                 <div class="contuct-from-container">
-                  <form  action=" ">    
+                  <form onsubmit="sendMail(event)">    
                     <div class="fromfield-container">
                       <input class="fromfield" type="text"
                       name="name"
                       id="name"
-                      
+                      required
                       placeholder="Enter your name"
                       >
                       <input class="fromfield" type="email"
                       name="email"
                       id="email"
-                      
+                      required
                       placeholder="Enter your email"
                       >
                       <input class="fromfield" type="text"
                       name="subject"
-                      id="subject"submit-btn
-                      
+                      id="subject"
+                      required
                       placeholder="Enter your subject"
                       >
                       <textarea name="message"
-                      id=" message" cols="30" rows="10"
+                      id="message" cols="30" rows="10"
                       class="fromfield fromfield-textarea"
+                      required
                       placeholder="Enter your message"
                       >
 
                       </textarea>
                       <div class="form-btn">
-                        <button type="submit" class="btn-pink" id="">Send Message<i class="submit-icon fa-solid fa-paper-plane"></i></button>
+                        <button type="submit" class="btn-pink">Send Message<i class="submit-icon fa-solid fa-paper-plane"></i></button>
 
                       </div>
 
@@ -422,6 +436,12 @@
       });
     })();
   </script>
+
+  <!-- EmailJS Library -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/index.min.js"></script>
+  
+  <!-- Mail.js Script -->
+  <script src="mail.js"></script>
 
 </body>
 </html>
